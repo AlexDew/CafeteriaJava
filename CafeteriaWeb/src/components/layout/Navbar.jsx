@@ -26,12 +26,9 @@ export default function Navbar({ modulo = 'vendedor', rol = 'Vendedor' }) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {enlaces.map((enlace) => (
               <li className="nav-item" key={enlace.id}>
-                
-                  className={`nav-link ${modulo === enlace.id ? 'active' : ''}`}
-                  href={enlace.href}
-                  
+                <a className={`nav-link ${modulo === enlace.id ? 'active' : ''}`} href={enlace.href}>
                   {enlace.label}
-                
+                </a>
               </li>
             ))}
           </ul>
