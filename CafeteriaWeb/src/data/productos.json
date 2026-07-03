@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Café Americano",
+    "precio": 5.00,
+    "stock": 30
+  },
+  {
+    "id": 2,
+    "nombre": "Capuccino",
+    "precio": 7.50,
+    "stock": 25
+  },
+  {
+    "id": 3,
+    "nombre": "Torta de Chocolate",
+    "precio": 8.00,
+    "stock": 15
+  }
+]
