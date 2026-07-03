@@ -1,0 +1,135 @@
+:root {
+  --cafe-cream: #faf6f1;
+  --cafe-cream-2: #f0e4d7;
+  --cafe-espresso: #3b2a20;
+  --cafe-espresso-2: #4e392b;
+  --cafe-caramel: #c68b59;
+  --cafe-caramel-dark: #a66b3d;
+  --cafe-ink: #2b1d14;
+  --cafe-success: #4c7a51;
+  --cafe-warning: #c97b2e;
+  --cafe-danger: #b3462c;
+
+  --bs-primary: var(--cafe-caramel);
+  --bs-primary-rgb: 198, 139, 89;
+  --bs-body-bg: var(--cafe-cream);
+  --bs-body-color: var(--cafe-ink);
+  --bs-border-radius: 0.75rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cafe-cream);
+  color: var(--cafe-ink);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: 'Fraunces', serif;
+  color: var(--cafe-espresso);
+}
+
+.btn-primary {
+  background-color: var(--cafe-caramel);
+  border-color: var(--cafe-caramel);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--cafe-caramel-dark);
+  border-color: var(--cafe-caramel-dark);
+}
+
+.btn-outline-primary {
+  color: var(--cafe-caramel-dark);
+  border-color: var(--cafe-caramel);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--cafe-caramel);
+  border-color: var(--cafe-caramel);
+}
+
+/* Navbar */
+.cafe-navbar {
+  background-color: var(--cafe-espresso);
+  padding: 0.85rem 0;
+}
+
+.cafe-navbar .navbar-brand {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--cafe-cream);
+  letter-spacing: 0.02em;
+}
+
+.cafe-navbar .navbar-brand span {
+  color: var(--cafe-caramel);
+}
+
+.cafe-navbar .nav-link {
+  color: rgba(250, 246, 241, 0.75);
+  font-weight: 500;
+  margin: 0 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.cafe-navbar .nav-link:hover {
+  color: var(--cafe-cream);
+}
+
+.cafe-navbar .nav-link.active {
+  color: var(--cafe-cream);
+  border-bottom-color: var(--cafe-caramel);
+}
+
+.cafe-navbar .badge-rol {
+  background-color: var(--cafe-caramel);
+  color: var(--cafe-espresso);
+  font-weight: 600;
+}
+
+/* Cards con acento de modulo */
+.cafe-card {
+  background: #fff;
+  border: 1px solid var(--cafe-cream-2);
+  border-top: 3px solid var(--cafe-caramel);
+  border-radius: var(--bs-border-radius);
+  box-shadow: 0 2px 10px rgba(59, 42, 32, 0.06);
+}
+
+.cafe-table thead {
+  background-color: var(--cafe-cream-2);
+}
+
+.cafe-table thead th {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--cafe-espresso);
+  border-bottom: none;
+}
+
+/* Footer */
+.cafe-footer {
+  background-color: var(--cafe-espresso);
+  color: rgba(250, 246, 241, 0.7);
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.cafe-footer a {
+  color: var(--cafe-cream);
+  text-decoration: none;
+}
+
+.cafe-footer a:hover {
+  color: var(--cafe-caramel);
+}
