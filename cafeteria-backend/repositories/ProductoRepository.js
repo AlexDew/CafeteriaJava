@@ -32,6 +32,39 @@ class ProductoRepository {
     this._guardar(productos);
     return producto;
   }
+
+  crear(datos) {
+    const productos = this._leer();
+    const nuevoId = Math.max(...productos.map(p => p.id), 0) + 1;
+    const nuevoProducto = new Producto({
+      id: nuevoId,
+      ...datos,
+      stock: datos.stock || 0
+    });
+    productos.push(nuevoProducto);
+    this._guardar(productos);
+    return nuevoProducto;
+  }
+
+  actualizar(id, datos) {
+    const productos = this._leer();
+    const index = productos.findIndex(p => p.id === id);
+    if (index === -1) throw new Error(`Producto ${id} no encontrado`);
+    
+    const producto = productos[index];
+    Object.assign(producto, datos);
+    this._guardar(productos);
+    return producto;
+  }
+
+  eliminar(id) {
+    const productos = this._leer();
+    const index = productos.findIndex(p => p.id === id);
+    if (index === -1) throw new Error(`Producto ${id} no encontrado`);
+    
+    productos.splice(index, 1);
+    this._guardar(productos);
+  }
 }
 
 module.exports = ProductoRepository;

@@ -1,135 +1,602 @@
+/* ========================================
+   PALETA DE COLORES PROFESIONAL
+   ======================================== */
 :root {
-  --cafe-cream: #faf6f1;
-  --cafe-cream-2: #f0e4d7;
-  --cafe-espresso: #3b2a20;
-  --cafe-espresso-2: #4e392b;
-  --cafe-caramel: #c68b59;
-  --cafe-caramel-dark: #a66b3d;
-  --cafe-ink: #2b1d14;
-  --cafe-success: #4c7a51;
-  --cafe-warning: #c97b2e;
-  --cafe-danger: #b3462c;
+  /* Colores Principales */
+  --primary: #1f2937;
+  --primary-light: #374151;
+  --primary-dark: #111827;
+  
+  /* Colores de Acento */
+  --accent: #d97706;
+  --accent-light: #f59e0b;
+  --accent-dark: #b45309;
+  
+  /* Estados */
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+  --info: #3b82f6;
+  --info-light: #dbeafe;
+  
+  /* Neutros */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  
+  /* Espaciados */
+  --spacing: 1rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
 
-  --bs-primary: var(--cafe-caramel);
-  --bs-primary-rgb: 198, 139, 89;
-  --bs-body-bg: var(--cafe-cream);
-  --bs-body-color: var(--cafe-ink);
-  --bs-border-radius: 0.75rem;
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--cafe-cream);
-  color: var(--cafe-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4,
-.font-display {
-  font-family: 'Fraunces', serif;
-  color: var(--cafe-espresso);
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.cafe-navbar {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cafe-navbar .navbar-brand {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cafe-navbar .navbar-brand span {
+  color: var(--accent-light);
+  font-style: italic;
+}
+
+.cafe-navbar .navbar-brand i {
+  font-size: 1.75rem;
+}
+
+.cafe-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.cafe-navbar .nav-link:hover,
+.cafe-navbar .nav-link.active {
+  color: var(--accent-light);
+}
+
+.cafe-navbar .badge {
+  background-color: var(--accent);
+  color: white;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.cafe-navbar .btn-success {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cafe-navbar .btn-success:hover {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+.cafe-navbar .btn-outline-secondary {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cafe-navbar .btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.cafe-footer {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 0;
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cafe-footer a {
+  color: var(--accent-light);
+}
+
+.cafe-footer a:hover {
+  color: white;
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+.btn {
+  border-radius: var(--radius-lg);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .btn-primary {
-  background-color: var(--cafe-caramel);
-  border-color: var(--cafe-caramel);
-  color: #fff;
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: var(--cafe-caramel-dark);
-  border-color: var(--cafe-caramel-dark);
+  background-color: var(--accent-light);
+  border-color: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-success {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.btn-success:hover {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+  color: white;
+}
+
+.btn-warning:hover {
+  background-color: #d97706;
+  border-color: #d97706;
 }
 
 .btn-outline-primary {
-  color: var(--cafe-caramel-dark);
-  border-color: var(--cafe-caramel);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--cafe-caramel);
-  border-color: var(--cafe-caramel);
+  background-color: var(--accent);
+  color: white;
 }
 
-/* Navbar */
-.cafe-navbar {
-  background-color: var(--cafe-espresso);
-  padding: 0.85rem 0;
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
 }
 
-.cafe-navbar .navbar-brand {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 1.35rem;
-  color: var(--cafe-cream);
-  letter-spacing: 0.02em;
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
 }
 
-.cafe-navbar .navbar-brand span {
-  color: var(--cafe-caramel);
+/* ========================================
+   CARDS
+   ======================================== */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  background-color: var(--bg-primary);
+  transition: all 0.3s ease;
 }
 
-.cafe-navbar .nav-link {
-  color: rgba(250, 246, 241, 0.75);
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background-color: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.product-card {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  border-top: 3px solid var(--accent);
+}
+
+.product-card .card-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ========================================
+   FORMULARIOS
+   ======================================== */
+.form-label {
   font-weight: 500;
-  margin: 0 0.35rem;
-  padding-bottom: 0.35rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
-.cafe-navbar .nav-link:hover {
-  color: var(--cafe-cream);
+.form-control,
+.form-select {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  background-color: var(--bg-primary);
 }
 
-.cafe-navbar .nav-link.active {
-  color: var(--cafe-cream);
-  border-bottom-color: var(--cafe-caramel);
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+  outline: none;
 }
 
-.cafe-navbar .badge-rol {
-  background-color: var(--cafe-caramel);
-  color: var(--cafe-espresso);
+.form-control::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* ========================================
+   TABLAS
+   ======================================== */
+.table {
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: var(--bg-tertiary);
+}
+
+.table thead th {
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  padding: 1rem;
   font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
 }
 
-/* Cards con acento de modulo */
-.cafe-card {
-  background: #fff;
-  border: 1px solid var(--cafe-cream-2);
-  border-top: 3px solid var(--cafe-caramel);
-  border-radius: var(--bs-border-radius);
-  box-shadow: 0 2px 10px rgba(59, 42, 32, 0.06);
+.table tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
 }
 
-.cafe-table thead {
-  background-color: var(--cafe-cream-2);
+.table tbody tr:hover {
+  background-color: var(--bg-tertiary);
 }
 
-.cafe-table thead th {
-  font-family: 'Fraunces', serif;
+.table tbody td {
+  padding: 1rem;
+  color: var(--text-primary);
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+.badge {
+  border-radius: 9999px;
   font-weight: 600;
-  color: var(--cafe-espresso);
-  border-bottom: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8rem;
 }
 
-/* Footer */
-.cafe-footer {
-  background-color: var(--cafe-espresso);
-  color: rgba(250, 246, 241, 0.7);
-  padding: 1.5rem 0;
-  margin-top: 3rem;
-  font-size: 0.9rem;
+.badge.bg-success {
+  background-color: var(--success-light) !important;
+  color: #065f46;
 }
 
-.cafe-footer a {
-  color: var(--cafe-cream);
-  text-decoration: none;
+.badge.bg-danger {
+  background-color: var(--danger-light) !important;
+  color: #7f1d1d;
 }
 
-.cafe-footer a:hover {
-  color: var(--cafe-caramel);
+.badge.bg-warning {
+  background-color: var(--warning-light) !important;
+  color: #92400e;
+}
+
+.badge.bg-info {
+  background-color: var(--info-light) !important;
+  color: #0c2d6b;
+}
+
+/* ========================================
+   ALERTAS
+   ======================================== */
+.alert {
+  border: none;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid;
+  padding: 1rem 1.25rem;
+}
+
+.alert-success {
+  background-color: var(--success-light);
+  border-left-color: var(--success);
+  color: #065f46;
+}
+
+.alert-danger {
+  background-color: var(--danger-light);
+  border-left-color: var(--danger);
+  color: #7f1d1d;
+}
+
+.alert-warning {
+  background-color: var(--warning-light);
+  border-left-color: var(--warning);
+  color: #92400e;
+}
+
+.alert-info {
+  background-color: var(--info-light);
+  border-left-color: var(--info);
+  color: #0c2d6b;
+}
+
+/* ========================================
+   CONTENEDORES Y LAYOUT
+   ======================================== */
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  background-color: var(--bg-secondary);
+}
+
+.content-wrapper {
+  width: 100%;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+.display-4, .display-5 {
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   TABLIST (Navegación por pestañas)
+   ======================================== */
+.nav-tabs {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-secondary);
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent-light);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background-color: transparent;
+}
+
+/* ========================================
+   SPINNER
+   ======================================== */
+.spinner-border {
+  color: var(--accent);
+}
+
+/* ========================================
+   ESPACIADOS UTILITARIOS
+   ======================================== */
+.gap-2 {
+  gap: 0.5rem !important;
+}
+
+.gap-3 {
+  gap: 1rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-3 {
+  padding: 1rem !important;
+}
+
+.p-5 {
+  padding: 3rem !important;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .content-wrapper {
+    padding: 1rem;
+  }
+
+  .cafe-navbar .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .btn-lg {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .content-wrapper {
+    padding: 1rem 0.5rem;
+  }
+
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .table thead th,
+  .table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
 }

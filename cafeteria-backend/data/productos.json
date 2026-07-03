@@ -17,7 +17,7 @@
     "id": 3,
     "nombre": "Jugo de naranja",
     "precio": 6,
-    "stock": 0,
+    "stock": 10,
     "categoria": "Bebidas"
   }
 ]
